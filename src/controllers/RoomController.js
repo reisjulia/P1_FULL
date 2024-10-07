@@ -35,7 +35,7 @@ class RoomController {
         try {
             const room = await Room.findById(roomId);
             if (!room || !room.isActive) {
-                return res.status(404).json({ message: 'Sala não encontrada ou inativa.' });
+                return response.status(404).json({ message: 'Sala não encontrada ou inativa.' });
             }
 
             if (room.participants.includes(userId)) {
@@ -52,4 +52,4 @@ class RoomController {
     }
 }
 
-module.exports = new RoomController();
+module.exports = RoomController;

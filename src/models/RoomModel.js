@@ -1,4 +1,4 @@
-const mongooose = require("mongoose");
+const mongoose = require("mongoose");
 const { v4: uuidv4 } = require("uuid");
 
 const RoomSchema = new mongoose.Schema({
@@ -32,6 +32,6 @@ const RoomSchema = new mongoose.Schema({
     },
 });
 
-const Room = mongooose.model('Room', RoomSchema);
+const Room = mongoose.model('Room', RoomSchema);
 
 module.exports = Room;
