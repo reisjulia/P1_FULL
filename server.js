@@ -13,19 +13,12 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => {
-    console.log('MongoDB conectado');
 
     const PORT = process.env.PORT || 3333;
     app.listen(PORT, () => {
         console.log(`Servidor rodando na porta ${PORT}`);
     });
-})
-.catch(err => console.error('Erro ao conectar ao MongoDB', err));
+
 
 
 app.use('/api/users', userRoutes);
