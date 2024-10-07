@@ -1,5 +1,4 @@
 const User = require('../models/UserModel');
-const { getAllUsers } = require('../services/UserService');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
