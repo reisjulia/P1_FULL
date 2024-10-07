@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv'); 
 const userRoutes = require('./src/routes/UserRoutes'); 
 const roomRoutes = require('./src/routes/RoomRoutes');
+const connectDB = require('./src/config/db')
+
 
 dotenv.config();
 connectDB();
@@ -25,7 +27,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
 .catch(err => console.error('Erro ao conectar ao MongoDB', err));
 
-app.use('/api/auth', authRoutes); 
+
 app.use('/api/users', userRoutes);
 app.use('/api/rooms', roomRoutes);
 
